@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150628194839) do
+ActiveRecord::Schema.define(version: 20150628195152) do
 
   create_table "element_libraries", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -31,6 +31,17 @@ ActiveRecord::Schema.define(version: 20150628194839) do
   create_table "keys", force: :cascade do |t|
     t.string   "tonic",      limit: 255
     t.string   "quality",    limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "songs", force: :cascade do |t|
+    t.text     "name",              limit: 65535
+    t.string   "time_signature_id", limit: 255
+    t.string   "integer",           limit: 255
+    t.integer  "key_id",            limit: 4
+    t.integer  "tempo_id",          limit: 4
+    t.boolean  "access",            limit: 1
     t.datetime "created_at"
     t.datetime "updated_at"
   end
