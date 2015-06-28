@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150628192834) do
+ActiveRecord::Schema.define(version: 20150628194443) do
+
+  create_table "elements", force: :cascade do |t|
+    t.integer  "song_id",            limit: 4
+    t.integer  "element_library_id", limit: 4
+    t.integer  "length",             limit: 4
+    t.text     "note",               limit: 65535
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "keys", force: :cascade do |t|
+    t.string   "tonic",      limit: 255
+    t.string   "quality",    limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "tempos", force: :cascade do |t|
     t.integer  "bpm",        limit: 4
