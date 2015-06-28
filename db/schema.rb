@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150628200031) do
+ActiveRecord::Schema.define(version: 20150628200209) do
 
   create_table "chord_by_keys", force: :cascade do |t|
     t.integer  "key_id",     limit: 4
@@ -46,6 +46,15 @@ ActiveRecord::Schema.define(version: 20150628200031) do
   create_table "keys", force: :cascade do |t|
     t.string   "tonic",      limit: 255
     t.string   "quality",    limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "lyrics", force: :cascade do |t|
+    t.integer  "element_id",  limit: 4
+    t.integer  "line_number", limit: 4
+    t.text     "lyric",       limit: 65535
+    t.integer  "song_id",     limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
   end
