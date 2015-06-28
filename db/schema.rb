@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150628195152) do
+ActiveRecord::Schema.define(version: 20150628195332) do
+
+  create_table "chord_by_keys", force: :cascade do |t|
+    t.integer  "key_id",     limit: 4
+    t.integer  "chord_id",   limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "element_libraries", force: :cascade do |t|
     t.string   "name",       limit: 255
