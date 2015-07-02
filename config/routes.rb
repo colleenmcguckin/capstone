@@ -7,5 +7,7 @@ Rails.application.routes.draw do
   get '/songs/:id/edit' => "songs#edit"
   get '/songs/:id/perform' => "songs#perform"
   get '/songs/:id/print' => "songs#print"
+  get '/songs/new' => "songs#new"
+  post '/songs/new' => "songs#create"
+  get '/songs/:id/creative' => "songs#creative"
 end
-

@@ -1,0 +1,23 @@
+<h1>Basics</h1>
+
+
+<%= form_tag("/songs/new", method: "post") do %>
+  <%= text_field_tag(:name, "Enter Song Name Here") %>
+  <%= collection_select(:key, :key_id, Key.all, :id, :tonic) %>
+  <%= collection_select(:time_signature, :time_signature_id, TimeSignature.all, :id, :name) %>
+  <%= collection_select(:tempo, :tempo_id, Tempo.all, :id, :bpm) %>
+  <%= submit_tag("Done With Basics") %>
+<% end %>
+
+
+<!-- 
+
+text field here for song name (submits to song model)
+
+3 dropdown lists: 
+    1. key (pulls from key model, submits key_id to song model)
+    2. time sig (pulls from time sig model, submits to song model)
+    3. tempo (pulls from tempo model, submits to song model)
+--> 
+
+<!-- back to library/my songs button on the left, done with basics (goes to structure) button the right --> 
