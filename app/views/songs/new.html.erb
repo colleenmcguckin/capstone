@@ -1,7 +1,7 @@
 <h1>Basics</h1>
 
 
-<%= form_tag("/songs/new", method: "post") do %>
+<%= form_tag("/songs/", method: "post") do %>
   <%= text_field_tag(:name, "Enter Song Name Here") %>
   <%= collection_select(:key, :key_id, Key.all, :id, :tonic) %>
   <%= collection_select(:time_signature, :time_signature_id, TimeSignature.all, :id, :name) %>
