@@ -11,6 +11,20 @@
     <%= select("length", "length_id_2", [[ "1", 1 ], [ "2", 2 ], ["4", 4], ["8", 8]]) %>
   </div>
   <%= hidden_field_tag "song_id", params[:song] %>
+  <%= hidden_field_tag "key_id", params[:key_id] %>
+  <%= submit_tag("Done With Structure") %>
+
+
+<% end %>
+
+ <!-- 
+<%= form_tag("/structures", method: "post") do %>
+  <div>
+    <%= collection_select(:chord, :chord_id, Key.all, :id, :tonic) %>
+  </div>
+ 
+  <%= hidden_field_tag "song_id", params[:song] %>
   <%= submit_tag("Done With Structure") %>
 
 <% end %>
+ -->

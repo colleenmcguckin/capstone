@@ -1,0 +1,13 @@
+<%= form_tag("/structures/#{@song.id}", method: "patch") do %>
+
+  <% @length_1.times do %>
+    <div>
+      <%= collection_select(:chord, :chord_id, @song.key.chords, :id, :name) %>
+    </div>
+  <% end %>
+<%= hidden_field_tag "length_1", "@length_1" %>
+<%= submit_tag("Save Chords") %>
+<% end %>
+
+</br>
+

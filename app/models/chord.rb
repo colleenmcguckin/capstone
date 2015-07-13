@@ -1,4 +1,6 @@
 class Chord < ActiveRecord::Base
-  belongs_to :chord_by_key
+  has_many :chord_by_key
   belongs_to :structure
+  has_many :keys, through: :chord_by_key
 end
+

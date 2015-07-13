@@ -7,6 +7,7 @@
   <%= collection_select(:time_signature, :time_signature_id, TimeSignature.all, :id, :name) %>
   <%= collection_select(:tempo, :tempo_id, Tempo.all, :id, :bpm) %>
   <%= submit_tag("Done With Basics") %>
+  <%= hidden_field_tag "key_id", params[:key_id] %>
 <% end %>
 
 
