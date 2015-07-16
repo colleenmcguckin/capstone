@@ -1,12 +1,15 @@
 <%= form_tag("/structures/#{@song.id}", method: "patch") do %>
-
-  <% @length_1.times do %>
+  
+  <% ((Song.find_by(id: @song.id).time_signature.beat_unit)*(@length_1)).times do %>
     <div>
       <%= collection_select(:chord, :chord_id, @song.key.chords, :id, :name) %>
     </div>
   <% end %>
-<%= hidden_field_tag "length_1", "@length_1" %>
-<%= submit_tag("Save Chords") %>
+  <div>
+    <%= text_field_tag(:lyrics, "Enter lyrics here") %>
+  </div>
+<%= hidden_field_tag "length_1", "#{@length_1}" %>
+<%= submit_tag("Save Chords & Lyrics") %>
 <% end %>
 
 </br>

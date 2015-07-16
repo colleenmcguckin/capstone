@@ -14,12 +14,12 @@ class StructuresController < ApplicationController
 
     position = 1
 
-    @length_1.times do 
+    ((Song.find_by(id: @song.id).time_signature.beat_unit)*(@length_1)).times do 
       Structure.create(position: position, element_library_id: element_1, song_id: song_id)
       position += 1
     end
 
-    @length_2.times do
+    ((Song.find_by(id: @song.id).time_signature.beat_unit)*(@length_2)).times do
       Structure.create(position: position, element_library_id: element_2, song_id: song_id)
       position += 1
     end
@@ -27,13 +27,17 @@ class StructuresController < ApplicationController
   end
 
   def update
-    @length_1 = params[@length_1].to_i
+    @length_1 = params[:length_1].to_i
     position = 1
-    @length_1.times do
-      Structure.update.where(position: "position").update(chord_id: "chord_id")
+    p params[:chord][:chord_id]
+    ((Song.find_by(params[:id]).time_signature.beat_unit)*(@length_1)).times do
+      Structure.find_by(song_id: params[:id], position: position).update(chord_id: params[:chord][:chord_id])
       position += 1
     end
-    redirect_to "/songs/new"
+    redirect_to "/structures/#{params[:id]}"
   end
 
+  def show
+    @song = Song.find_by(id: params[:id])
+  end
 end

@@ -13,14 +13,6 @@ class SongsController < ApplicationController
     redirect_to "/structures/new?song=#{@song.id}"
   end
 
-  def structure
-   
-    
+  def show
   end
-
-  def creative
-   
-    
-  end
-
 end
