@@ -1,3 +1,5 @@
+<h1>Creative Mode</h1>
+
 <%= form_tag("/structures/#{@song.id}", method: "patch") do %>
   
   <% ((Song.find_by(id: @song.id).time_signature.beat_unit)*(@length_1)).times do %>
@@ -6,7 +8,7 @@
     </div>
   <% end %>
   <div>
-    <%= text_field_tag(:lyrics, "Enter lyrics here") %>
+    <%= text_field_tag(:lyrics, nil, placeholder: "Enter lyrics here") %>
   </div>
 <%= hidden_field_tag "length_1", "#{@length_1}" %>
 <%= submit_tag("Save Chords & Lyrics") %>

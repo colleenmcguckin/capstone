@@ -1,16 +1,9 @@
-<h1><a href="/songs/new">Start New Song</a></h1>
-
-<% link_to 'New Song', "/songs/new" %>
-
-
 <h1>My Songs: </h1>
 <% @songs.each do |song| %>
-  <h2> <%= song.name %> </h2>
-  <h4> <%= song.key.tonic %> </h4>
-  <h4> <%= song.key.quality %> </h4>
-  <h4> <%= song.time_signature.name %> </h4>
-  <h4> <%= song.tempo.bpm %> </h4>
-  <%= link_to 'Edit', "/songs/#{song.id}/edit" %>
-  <%= link_to 'Perform', "/songs/#{song.id}/perform" %>
-  <%= link_to 'Print', "/songs/#{song.id}/print" %>
+  <h2> <a href="/songs/<%= song.id %>"><%= song.name %></a> </h2>
+  <h4> Key: <%= song.key.tonic %> </h4>
+  <h4> Time Signature: <%= song.time_signature.name %> </h4>
+  <h4> Tempo: <%= song.tempo.bpm %> bpm</h4>
+  <%= link_to 'Edit', "/structures" %>
+  <%= link_to 'Perform', "/structures/#{song.id}" %>
 <% end %>
