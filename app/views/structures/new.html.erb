@@ -2,7 +2,7 @@
 
 
 <%= form_tag("/structures", method: "post") do %>
-  <div>
+  <div class="btn-group">
     <%= collection_select(:element_1, :element_library_id, ElementLibrary.all, :id, :name) %>
     <%= select("length", "length_id_1", [[ "1", 1 ], [ "2", 2 ], ["4", 4], ["8", 8]]) %>
     <%= text_field_tag(:notes, nil, placeholder: "optional notes") %>
