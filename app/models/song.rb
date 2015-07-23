@@ -4,6 +4,6 @@ class Song < ActiveRecord::Base
   belongs_to :tempo
   belongs_to :key
   has_many :elements
-  belongs_to :structure
-  belongs_to :lyric
+  has_many :structures
+  has_many :lyrics
 end

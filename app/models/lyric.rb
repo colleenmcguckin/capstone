@@ -1,3 +1,3 @@
 class Lyric < ActiveRecord::Base
-  has_many :songs
+  belongs_to :song
 end
