@@ -7,3 +7,20 @@ json.songs @songs do |song|
   json.structure song.structures
   json.lyrics song.lyrics
 end
+
+json.keys @keys do |key|
+  json.id key.id
+  json.name key.tonic
+end
+
+json.time_signatures @time_signatures do |time_signature|
+  json.id time_signature.id
+  json.name time_signature.name
+  json.beat_unit time_signature.beat_unit
+  json.bar time_signature.bar
+end
+
+json.tempos @tempos do |tempo|
+  json.id  tempo.id
+  json.bpm tempo.bpm
+end

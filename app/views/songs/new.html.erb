@@ -1,26 +1,13 @@
 
 <h1>Basics</h1>
 
-
-<%= form_tag("/songs/", method: "post") do %>
-  <%= text_field_tag(:name, "Enter Song Name Here") %>
-  <%= collection_select(:key, :key_id, Key.all, :id, :tonic) %>
-  <%= collection_select(:time_signature, :time_signature_id, TimeSignature.all, :id, :name) %>
-  <%= collection_select(:tempo, :tempo_id, Tempo.all, :id, :bpm) %>
-  <%= submit_tag("Done With Basics") %>
-  <%= hidden_field_tag "key_id", params[:key_id] %>
-<% end %>
+<div ng-controller="songsCtrl">
+  <input ng-model="songTitle" placeholder="Enter Song Name Here">
+  <select ng-model="key" ng-options="key.name for key in keys"></select>
+  <select ng-model="timeSignature" ng-options="time_signature.name for time_signature in time_signatures"></select>
+  <select ng-model="tempo" ng-options="tempo.bpm for tempo in tempos"></select>
+  <button ng-click="addSong(songTitle, key, timeSignature, tempo)"> Add Song! </button>
+</div>
 
 
 
-<!-- 
-
-text field here for song name (submits to song model)
-
-3 dropdown lists: 
-    1. key (pulls from key model, submits key_id to song model)
-    2. time sig (pulls from time sig model, submits to song model)
-    3. tempo (pulls from tempo model, submits to song model)
---> 
-
-<!-- back to library/my songs button on the left, done with basics (goes to structure) button the right --> 
