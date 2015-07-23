@@ -3,7 +3,7 @@ json.songs @songs do |song|
   json.title song.name
   json.time_signature song.time_signature.name
   json.key_signature song.key.tonic
-  json.tempo song.tempo.bpm
+  json.tempo song.tempo
   json.structure song.structures
   json.lyrics song.lyrics
 end

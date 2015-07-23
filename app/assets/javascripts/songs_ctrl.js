@@ -20,7 +20,7 @@
       title: songTitle,
       key: key.id,
       time_signature: timeSignature.id,
-      tempo: tempo.bpm
+      tempo: tempo.id
     };
 
     $http.post('/api/v1/songs.json', song).then(function(response){
