@@ -24,3 +24,8 @@ json.tempos @tempos do |tempo|
   json.id  tempo.id
   json.bpm tempo.bpm
 end
+
+json.element_names @elements do |element|
+  json.id element.id
+  json.element_name element.name
+end

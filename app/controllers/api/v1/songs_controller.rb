@@ -5,6 +5,7 @@ class Api::V1::SongsController <ApplicationController
     @keys = Key.all
     @time_signatures = TimeSignature.all
     @tempos = Tempo.all
+    @elements = ElementLibrary.all
   end
 
   def create

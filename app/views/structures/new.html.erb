@@ -1,32 +1,33 @@
 <h1>Structure</h1>
 
 
-<%= form_tag("/structures", method: "post") do %>
-  <div class="btn-group">
-    <%= collection_select(:element_1, :element_library_id, ElementLibrary.all, :id, :name) %>
-    <%= select("length", "length_id_1", [[ "1", 1 ], [ "2", 2 ], ["4", 4], ["8", 8]]) %>
-    <%= text_field_tag(:notes, nil, placeholder: "optional notes") %>
+<div ng-controller="structureCtrl">
+<div id="structure_container">
+  <div class="element_div" ng-repeat="inputField in inputFields">
+    <div class="structure_div" >
+      <select ng-model="elementSelected" ng-options="element.element_name for element in element_names"></select>
+      <select ng-model="lengthSelected">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="4">4</option>
+        <option value="8">8</option>></select>
+      <input ng-model="optionalNotes" placeholder="Optional Notes">
+    </div>  
+    <div class="structure_div">
+      <h3 ng-click="addElementField()">+</h3>
+    </div>
+    <div class="structure_div">
+      <h3 ng-click="removeElementField(inputField)">-</h3>
+    </div>
+  </div>
+
+
   </div>
   <div>
-    <%= collection_select(:element_2, :element_library_id, ElementLibrary.all, :id, :name) %>
-    <%= select("length", "length_id_2", [[ "1", 1 ], [ "2", 2 ], ["4", 4], ["8", 8]]) %>
-    <%= text_field_tag(:notes, nil, placeholder: "optional notes") %>
+    <button ng-click="saveStructure()"> Save Structure! </button>
   </div>
-  <%= hidden_field_tag "song_id", params[:song] %>
-  <%= hidden_field_tag "key_id", params[:key_id] %>
-  <%= submit_tag("Done With Structure") %>
+</div>
 
 
-<% end %>
 
- <!-- 
-<%= form_tag("/structures", method: "post") do %>
-  <div>
-    <%= collection_select(:chord, :chord_id, Key.all, :id, :tonic) %>
-  </div>
- 
-  <%= hidden_field_tag "song_id", params[:song] %>
-  <%= submit_tag("Done With Structure") %>
 
-<% end %>
- -->

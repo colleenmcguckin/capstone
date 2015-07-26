@@ -28,10 +28,14 @@
     }, function(error) {
       $scope.errors = error.data.errors;
     });
+
+    window.location = "/structures/new?song=#{song.id}";
+    
   }
 
     window.scope = $scope;
 
   })
+
 
 }());
