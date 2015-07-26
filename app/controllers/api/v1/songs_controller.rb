@@ -11,7 +11,7 @@ class Api::V1::SongsController <ApplicationController
   def create
     @song = Song.new(name: params[:title], key_id: params[:key], time_signature_id: params[:time_signature], tempo_id: params[:tempo])
     if @song.save
-      head :ok
+      render json: { song_id: @song.id }, status: 200
     else
       render json: { errors: @release.errors.full_messages }, status: 422
     end

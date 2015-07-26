@@ -14,8 +14,11 @@
 
     });
   }
-
     setup2();
+
+  $scope.setId = function(song_id){
+    $scope.currentSongId = song_id;
+  }
 
   $scope.elementCount = 0
   $scope.inputFields = [{}]
@@ -30,11 +33,36 @@
   $scope.removeElementField = function(inputField){
     $scope.elementCount--;
     var index = $scope.inputFields.indexOf(inputField);
-    $scope.inputFields.splice(index, 1);
+    if ($scope.inputFields.length > 1){
+      $scope.inputFields.splice(index, 1);
+    }
+  
   }
 
-  $scope.songStructure = []
   
+  $scope.saveStructure = function(){
+    var songStructure = []
+    var count = $scope.inputFields.length
+    for (var i=0; i < count; i++){
+      var element = {
+        elementId: $scope.inputFields[i].elementSelected.id,
+        elementLength: $scope.inputFields[i].lengthSelected,
+        optionalNotes: $scope.inputFields[i].optionalNotes,
+        song_id: $scope.currentSongId
+      };
+      songStructure.push(element);
+    }
+    console.log(songStructure);
+    
+    $http.post('/api/v1/structures.json', songStructure).then(function(response){
+      $scope.element_names.push(songStructure);
+    }, function(error) {
+      $scope.errors = error.data.errors;
+
+
+    });
+
+  };
 
 
  

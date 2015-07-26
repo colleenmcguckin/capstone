@@ -1,17 +1,17 @@
 <h1>Structure</h1>
 
 
-<div ng-controller="structureCtrl">
+<div ng-controller="structureCtrl" ng-init="setId(<%= @song_id %>)">
 <div id="structure_container">
   <div class="element_div" ng-repeat="inputField in inputFields">
     <div class="structure_div" >
-      <select ng-model="elementSelected" ng-options="element.element_name for element in element_names"></select>
-      <select ng-model="lengthSelected">
+      <select ng-model="inputField.elementSelected" ng-options="element.element_name for element in element_names"></select>
+      <select ng-model="inputField.lengthSelected">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="4">4</option>
         <option value="8">8</option>></select>
-      <input ng-model="optionalNotes" placeholder="Optional Notes">
+      <input ng-model="inputField.optionalNotes" placeholder="Optional Notes">
     </div>  
     <div class="structure_div">
       <h3 ng-click="addElementField()">+</h3>
@@ -27,6 +27,7 @@
     <button ng-click="saveStructure()"> Save Structure! </button>
   </div>
 </div>
+
 
 
 

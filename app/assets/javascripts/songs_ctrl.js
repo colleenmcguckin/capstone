@@ -25,11 +25,13 @@
 
     $http.post('/api/v1/songs.json', song).then(function(response){
       $scope.songs.push(song);
+      console.log("blah");
+      console.log(response.data);
+      window.location = "/structures/new?song=" + response.data.song_id;
     }, function(error) {
       $scope.errors = error.data.errors;
     });
-
-    window.location = "/structures/new?song=#{song.id}";
+   
     
   }
 
