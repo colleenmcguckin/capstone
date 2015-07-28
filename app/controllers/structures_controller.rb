@@ -12,6 +12,10 @@ class StructuresController < ApplicationController
 
   end
 
+  def edit
+    
+  end
+
   def update
     @length_1 = params[:length_1].to_i
     position = 1

@@ -1,0 +1,14 @@
+<h1>Select Chords & Enter Lyrics</h1>
+
+<div ng-controller="structureCtrl" ng-init="setId(<%= @song_id %>)">
+<div id="chords_container">
+  <div class="chord_div" ng-repeat="chord in chords">
+    <div class="chord_div" >
+      <select ng-model="chord" ng-options="key.tonic for key in keys"></select>
+    </div> 
+
+  </div>
+  <div>
+    <button ng-click="saveChords()"> Save Chords! </button>
+  </div>
+</div>

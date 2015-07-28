@@ -1,0 +1,33 @@
+<h1>Creative Mode</h1>
+
+<%= form_tag("/structures/#{@song.id}", method: "patch") do %>
+  
+  <div>
+    <% @lines.each do |line| %>
+
+      <% line.each do |measure| %>
+
+        <% measure.each do |structure| %>
+
+          <div>
+            <%= collection_select(:chord, :chord_id, @song.key.chords, :id, :name) %>
+          </div>
+
+        <% end %>
+        <hr>
+      <% end %>
+      <div>
+        <%= text_field_tag(:lyrics, nil, placeholder: "Enter lyrics here") %>
+      </div>
+    <% end %>
+  </div>
+  <%= submit_tag("Save Chords & Lyrics") %>
+<% end %>
+
+</br>
+
+
+
+
+
+      

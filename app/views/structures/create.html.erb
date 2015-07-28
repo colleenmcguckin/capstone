@@ -2,7 +2,7 @@
 
 <%= form_tag("/structures/#{@song.id}", method: "patch") do %>
   
-  <% ((Song.find_by(id: @song.id).time_signature.beat_unit)*(@length_1)).times do %>
+  <% ((Song.find_by(id: @song.id).time_signature.beat_unit)*(Structure.where(id: @song_id))).times do %>
     <div>
       <%= collection_select(:chord, :chord_id, @song.key.chords, :id, :name) %>
     </div>
