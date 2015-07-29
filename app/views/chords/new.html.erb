@@ -3,21 +3,21 @@
 <%= form_tag("/structures/#{@song.id}", method: "patch") do %>
   
   <div>
-    <% @lines.each do |line| %>
+    <% @lines.each_with_index do |line, index| %>
 
       <% line.each do |measure| %>
 
         <% measure.each do |structure| %>
 
           <div>
-            <%= collection_select(:chord, :chord_id, @song.key.chords, :id, :name) %>
+            <%= collection_select("structures[#{structure.id}]", :chord_id, @song.key.chords, :id, :name) %>
           </div>
 
         <% end %>
         <hr>
       <% end %>
       <div>
-        <%= text_field_tag(:lyrics, nil, placeholder: "Enter lyrics here") %>
+        <%= text_field_tag("lyrics[#{index}]", nil, placeholder: "Enter lyrics here") %>
       </div>
     <% end %>
   </div>
