@@ -54,7 +54,9 @@
 
       </form>
       <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Log Out", "/users/sign_out", method: :delete if current_user %></li>
         <li><a href="/songs">Clear Filters</a></li>
+
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

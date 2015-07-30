@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150719212603) do
+ActiveRecord::Schema.define(version: 20150729233752) do
 
   create_table "chord_by_keys", force: :cascade do |t|
     t.integer  "key_id",     limit: 4
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 20150719212603) do
     t.boolean  "access",            limit: 1
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id",           limit: 4
   end
 
   create_table "structures", force: :cascade do |t|

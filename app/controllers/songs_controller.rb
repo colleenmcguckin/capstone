@@ -7,7 +7,7 @@ class SongsController < ApplicationController
     elsif params[:keysignature]
       @songs = Song.where(key_id: params[:keysignature])
     elsif params[:timesignature]
-      @songs = Song.where(time_signature_id: params[:timesignature]) 
+      @songs = Song.where(time_signature_id: params[:timesignature])
     elsif params[:song_name]
       @songs = Song.where("name LIKE (?)",  "%#{params[:song_name]}%" )
     else 
@@ -27,6 +27,18 @@ class SongsController < ApplicationController
     
   end
 
+
   def show
+    @song = Song.find_by(params[:id])
+
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = LeadSheetPdf.new(@song.id)
+        send_data pdf.render, filename: "#{@song.name}.pdf", type: "application/pdf", disposition: "inline"
+      end
+    end
   end
+  
+
 end

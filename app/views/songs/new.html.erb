@@ -1,14 +1,29 @@
-
+<div class="basics">
 <h1>Basics</h1>
-
-<div ng-controller="songsCtrl">
-  <input ng-model="songTitle" placeholder="Enter Song Name Here">
-  <select ng-model="key" ng-options="key.name for key in keys"></select>
-  <select ng-model="timeSignature" ng-options="time_signature.name for time_signature in time_signatures"></select>
-  <select ng-model="tempo" ng-options="tempo.bpm for tempo in tempos"></select>
-  <button ng-click="addSong(songTitle, key, timeSignature, tempo)"> Add Song! </button>
 </div>
 
+<div class="basics" ng-controller="songsCtrl">
+  <div>
+  <input id="title" ng-model="songTitle" placeholder="Enter Song Name">
+  </div>
+  <div class="basicsSelections">
+  <div class="basicsTitles">
+    <div><h4> Key: </h4></div>
+    <select ng-model="key" ng-options="key.name for key in keys"></select>
+  </div>
+  <div class="basicsTitles">
+    <div><h4> Time Signature:</h4></div>
+    <select ng-model="timeSignature" ng-options="time_signature.name for time_signature in time_signatures"></select>
+  </div>
+  <div class="basicsTitles">  
+    <div><h4> Tempo: </h4></div>
+    <select ng-model="tempo" ng-options="tempo.bpm for tempo in tempos"></select>
+  </div>
+  </div>
+  <div class="basicsButton">
+  <button ng-click="addSong(songTitle, key, timeSignature, tempo)"> Add Song! </button>
+  </div>
+</div>
 
 
 
