@@ -6,7 +6,8 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body ng-app="app">
+<body ng-app="app" >
+<div id="song_index">
  <p class="notice"><%= notice %></p>
  <p class="alert"><%= alert %></p>
 <nav class="navbar navbar-default">
@@ -63,6 +64,6 @@
 </nav>
 
 <%= yield %>
-
+</div>
 </body>
 </html>

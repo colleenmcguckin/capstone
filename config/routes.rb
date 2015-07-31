@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "books#index"
+  root to: "songs#index"
   get '/books' => "books#index"
   get '/songs/:id/show_pdf' => "pdf_lead_sheet#show"
 

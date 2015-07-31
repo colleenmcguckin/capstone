@@ -26,11 +26,9 @@ class Api::V1::StructuresController < ApplicationController
         Structure.create(position: position, element_library_id: element[:elementId], song_id: element[:song_id])
         position += 1
       end
-      render json: {
-        status: 200
-      }
+      
     end
-
+    render json: {}, status: 200
     # ((Song.find_by(id: @song.id).time_signature.beat_unit)*(@length_1)).times do 
     #   Structure.create(position: position, element_library_id: element_1, song_id: song_id)
     #   position += 1

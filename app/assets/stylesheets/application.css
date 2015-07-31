@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+#song_index{
+  background-image: url("/images/notebook_cover_background.png");
+  background-size: 
+}

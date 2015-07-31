@@ -32,28 +32,13 @@ class StructuresController < ApplicationController
 
     line_counter = 1
     params[:lyrics].each do |line_number, lyrics|
-      Lyric.create(line_number: (line_number.to_i + 1), lyric: lyrics)
+      Lyric.create(line_number: (line_number.to_i + 1), lyric: lyrics, song_id: @song.id)
       line_counter += 1
     end
 
 
 
-    beat_unit = @song.time_signature.beat_unit
-    structures = @song.structures.order(:position)
-    @lines = []
-    measures = structures.each_slice(beat_unit).to_a
-    index = 0
-    while index < measures.count
-      line = []
-      current_element_id = measures[index][0].element_library_id
-      4.times do
-        break unless measures[index]
-        break if measures[index][0].element_library_id != current_element_id
-        line << measures[index]
-        index += 1
-      end
-      @lines << line
-    end
+    @lines = @song.lines
 
     # @lines.count.times do
     #   Lyric.create(song_id: params[:id], line_number: line_number, lyric: params[:lyric]))

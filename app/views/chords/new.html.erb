@@ -1,23 +1,30 @@
+<div class="creativeModeContainer">
 <h1>Creative Mode</h1>
 
 <%= form_tag("/structures/#{@song.id}", method: "patch") do %>
   
-  <div>
+  <div class="creativeMode">
     <% @lines.each_with_index do |line, index| %>
+    <div id="element_name">
+      <%= ElementLibrary.find_by(@current_element_id).name %>
+    </div>
 
       <% line.each do |measure| %>
 
+        <div class="measure">
         <% measure.each do |structure| %>
 
-          <div>
-            <%= collection_select("structures[#{structure.id}]", :chord_id, @song.key.chords, :id, :name) %>
+          <div class="creativeMode" >
+            <div >
+            <%= collection_select("structures[#{structure.id}]", :chord_id, @song.key.chords, :id, :name, {},html_options={:class => "chord_select"}) %>
+            </div>
           </div>
 
         <% end %>
-        <hr>
+        </div>
       <% end %>
-      <div>
-        <%= text_field_tag("lyrics[#{index}]", nil, placeholder: "Enter lyrics here") %>
+      <div >
+        <%= text_field_tag("lyrics[#{index}]", nil, placeholder: "Enter lyrics here", :class => 'lyric_box') %>
       </div>
     <% end %>
   </div>
@@ -25,7 +32,7 @@
 <% end %>
 
 </br>
-
+</div>
 
 
 
