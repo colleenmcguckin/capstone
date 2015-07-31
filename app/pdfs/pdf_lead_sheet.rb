@@ -28,15 +28,17 @@ def initialize(id)
     end
     
       index = 1
+      string = ""
       song.lines.each do |measure|
         move_down 10
+        text ElementLibrary.find_by(measure[0][0].element_library_id).name
         measure.each do |structure|
           structure.each do |object|
             counter += 1
             if object.chord.name == previous_chord
-              text "/"
+              string += " / "
             else
-            text Chord.find_by(id: object.chord_id).name
+            string += " " + Chord.find_by(id: object.chord_id).name + " "
           end
             if counter == beat_unit
               previous_chord=""
@@ -46,6 +48,9 @@ def initialize(id)
             end
           end
         end
+
+        text string, :align => :justify
+        string = ""
         text Lyric.where(song_id: song.id, line_number: index)[0].lyric
         index += 1
     

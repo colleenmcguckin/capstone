@@ -6,7 +6,7 @@
   <div class="creativeMode">
     <% @lines.each_with_index do |line, index| %>
     <div id="element_name">
-      <%= ElementLibrary.find_by(@current_element_id).name %>
+      <%= ElementLibrary.find_by(@element_ids[index]).name %>
     </div>
 
       <% line.each do |measure| %>
