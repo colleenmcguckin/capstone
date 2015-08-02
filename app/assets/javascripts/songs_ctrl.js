@@ -35,6 +35,17 @@
     
   }
 
+  $scope.changeSelectedKeySignature = function(tonic) {
+    // $scope.selectedTimeSignature = null;
+    $scope.selectedKeySignature = tonic;
+  };
+
+  $scope.changeSelectedTimeSignature = function(name) {
+    // $scope.selectedKeySignature = null;
+    $scope.selectedTimeSignature = name;
+  };
+
+
     window.scope = $scope;
 
   })

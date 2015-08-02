@@ -31,7 +31,7 @@ def initialize(id)
       string = ""
       song.lines.each do |measure|
         move_down 10
-        text ElementLibrary.find_by(measure[0][0].element_library_id).name
+        text ElementLibrary.find_by(id: measure[0][0].element_library_id).name, :style => :bold, :size => 14 
         measure.each do |structure|
           structure.each do |object|
             counter += 1
@@ -51,7 +51,7 @@ def initialize(id)
 
         text string, :align => :justify
         string = ""
-        text Lyric.where(song_id: song.id, line_number: index)[0].lyric
+        text Lyric.where(song_id: song.id, line_number: index)[0].lyric, :style => :italic, :color => "B2B2B2"
         index += 1
     
   end

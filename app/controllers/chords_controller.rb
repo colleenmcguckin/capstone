@@ -19,5 +19,7 @@ class ChordsController < ApplicationController
       end
       @lines << line
     end
+    puts "HHHHHHHHHH"
+    puts @element_ids
   end
 end
