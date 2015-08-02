@@ -10,7 +10,6 @@
       $scope.keys = response.data.keys;
       $scope.time_signatures = response.data.time_signatures;
       $scope.tempos = response.data.tempos;
-
     });
   }
     setup();
