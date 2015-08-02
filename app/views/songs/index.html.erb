@@ -4,7 +4,7 @@
 
     <h1>My Songs: </h1>
 
-      <div class="col-sm-6 col-md-4" ng-repeat="song in songs | filter: {key_signature: selectedKeySignature}:true | filter: { time_signature: selectedTimeSignature, title: songFilter } track by $index">
+      <div class="col-sm-6 col-md-4" ng-repeat="song in songs | filter: {key_signature: selectedKeySignature}:true | filter: { time_signature: selectedTimeSignature, title: songFilter } | orderBy:orderAttribute:descending track by $index">
         <div class="thumbnail">
           <div class="caption">
             <div class="row">

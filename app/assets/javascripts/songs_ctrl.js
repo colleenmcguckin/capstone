@@ -11,6 +11,7 @@
       $scope.time_signatures = response.data.time_signatures;
       $scope.tempos = response.data.tempos;
     });
+      $scope.orderAttribute = ''
   }
     setup();
 
@@ -33,6 +34,16 @@
    
     
   }
+  $scope.sortBy = function(attribute) {
+        console.log("JJJJJJJJ")
+        if(attribute != $scope.orderAttribute) {
+          $scope.descending = false;
+          } else {
+            $scope.descending = !$scope.descending;
+          }
+        
+        $scope.orderAttribute = attribute;
+      };
 
   $scope.changeSelectedKeySignature = function(tonic) {
     // $scope.selectedTimeSignature = null;
@@ -43,6 +54,10 @@
     // $scope.selectedKeySignature = null;
     $scope.selectedTimeSignature = name;
   };
+
+  $scope.alphabetize = function(){
+    $scope.songs.order($scope.song.name)
+  }
 
 
     window.scope = $scope;

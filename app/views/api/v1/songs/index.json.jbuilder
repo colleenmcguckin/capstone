@@ -6,6 +6,7 @@ json.songs @songs do |song|
   json.tempo song.tempo
   json.structure song.structures
   json.lyrics song.lyrics
+  json.created_at song.created_at
 end
 
 json.keys @keys do |key|
