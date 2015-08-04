@@ -13,6 +13,13 @@
  *= require_tree .
  *= require_self
  */
+#song_index{
+  background-image: url('notebook-bg.png');
+  background-size: 50%;
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px #888888;
+}
+
 .background{
   background-image: url('linedpaper.png');
   height: 100%;
@@ -26,13 +33,7 @@
 }
 
  }
- 
-#song_index{
-  background-image: url('notebook-bg.png');
-  background-size: 50%;
-  border-radius: 10px;
-  box-shadow: 10px 10px 5px #888888;
-}
+
 
 
 html, body {
