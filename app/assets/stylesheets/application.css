@@ -13,11 +13,31 @@
  *= require_tree .
  *= require_self
  */
+html, body {
+  height: 100%;
+}
+
 #song_index{
   background-image: url('notebook-bg.png');
   background-size: 50%;
   border-radius: 10px;
   box-shadow: 10px 10px 5px #888888;
+}
+
+#indexTitle {
+  color: black;
+  background-image: url('tape.png');
+  background-size: 100%;
+  width: 500px;
+  height: auto;
+  border-radius: 10px;
+  margin: auto;
+  margin-bottom: 15px;
+  padding-bottom: 2px;
+}
+
+#songs{
+  background: rgba(255, 255, 255, 0.85);
 }
 
 .background{
@@ -36,25 +56,6 @@
 
 
 
-html, body {
-  height: 100%;
-}
-
-#indexTitle {
-  color: black;
-  background-image: url('tape.png');
-  background-size: 100%;
-  width: 500px;
-  height: auto;
-  border-radius: 10px;
-  margin: auto;
-  margin-bottom: 15px;
-  padding-bottom: 2px;
-}
-
-#songs{
-  background: rgba(255, 255, 255, 0.85);
-}
 
 .page-navbar h2{
   text-align: center;
