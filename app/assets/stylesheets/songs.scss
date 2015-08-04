@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.new-songs-wrapper{
+  height: 100%;
+}
+
 h1{
   font-size: 60px;  
 }
@@ -42,3 +46,4 @@ h1{
 .navbar {
   margin-top: -62px;
 }
+

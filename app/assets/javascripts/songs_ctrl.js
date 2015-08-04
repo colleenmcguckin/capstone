@@ -5,7 +5,6 @@
 
   var setup = function(){
     $http.get("/api/v1/songs.json").then(function(response){
-
       $scope.songs = response.data.songs;
       $scope.keys = response.data.keys;
       $scope.time_signatures = response.data.time_signatures;
@@ -13,8 +12,7 @@
     });
       $scope.orderAttribute = ''
   }
-    setup();
-
+  setup();
   $scope.addSong = function(songTitle, key, timeSignature, tempo){
     var song = {
       title: songTitle,

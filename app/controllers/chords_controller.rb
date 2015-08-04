@@ -1,4 +1,5 @@
 class ChordsController < ApplicationController
+  before_action :authenticate_user!, only: [:new]
   def new
     @song = Song.find_by(id: params[:song])
     beat_unit = @song.time_signature.beat_unit

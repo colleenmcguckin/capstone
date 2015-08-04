@@ -1,5 +1,5 @@
 class StructuresController < ApplicationController
-
+ before_action :authenticate_user!, only: [:new, :show, :update]
   def index
     
   end
@@ -50,7 +50,7 @@ class StructuresController < ApplicationController
 
 
 
-    redirect_to "/structures/#{params[:id]}"
+    redirect_to "/songs/#{params[:id]}/show_pdf.pdf"
   end
 
   def show

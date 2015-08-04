@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "songs#index"
+
+  devise_scope :user do
+    root to: "devise/sessions#new"
+  end
   get '/books' => "books#index"
   get '/songs/:id/show_pdf' => "pdf_lead_sheet#show"
 
