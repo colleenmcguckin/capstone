@@ -18,7 +18,7 @@ html, body {
 }
 
 #song_index{
-  background-image: url('notebook-bg.png');
+  background-image: url("<%= asset_path('notebook-bg.png') %>");
   background-size: 50%;
   border-radius: 10px;
   box-shadow: 10px 10px 5px #888888;
@@ -26,7 +26,7 @@ html, body {
 
 #indexTitle {
   color: black;
-  background-image: url('tape.png');
+  background-image: url("<%= asset_path('tape.png')%>");
   background-size: 100%;
   width: 500px;
   height: auto;
@@ -41,7 +41,7 @@ html, body {
 }
 
 .background{
-  background-image: url('linedpaper.png');
+  background-image: url("<%= asset_path('linedpaper.png') %>");
   height: 100%;
   padding-top: 30px;
   margin-top:-20px;
@@ -65,5 +65,5 @@ html, body {
   background-repeat: no-repeat;
   background-position: center;
   height:auto;
-  background-image: url('tape.png');
+  background-image: url("<%= asset_path('tape.png')%>");
 }
