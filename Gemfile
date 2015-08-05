@@ -31,6 +31,7 @@ gem 'bootstrap-sass'
 gem 'prawn', '~> 2.0.1'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'seed_dump'
 
 gem 'pg', group: :production
 
