@@ -1,7 +1,7 @@
 (function(){
   "use strict";
 
-  angular.module("app").controller("songsCtrl", function($scope, $http){
+  angular.module("app").controller("songsCtrl", ['$scope', '$http', function($scope, $http){
 
   var setup = function(){
     $http.get("/api/v1/songs.json").then(function(response){
@@ -60,7 +60,7 @@
 
     window.scope = $scope;
 
-  })
+  }])
 
 
 }());
