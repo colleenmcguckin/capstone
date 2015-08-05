@@ -1,5 +1,5 @@
 .navimage {
-  background-image: url('notebook-cover-background.png')
+  background-image: url("/assets/notebook-cover-background.png");
 }
 
 .header-container {
@@ -29,7 +29,7 @@
 
 
     .tape {
-      background-image: url("tape.png");
+      background-image: url("/assets/tape.png");
       background-size: 100% 100%;
       background-repeat: no-repeat;
       display: inline-block;
