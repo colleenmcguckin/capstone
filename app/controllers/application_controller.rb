@@ -5,7 +5,6 @@ class ApplicationController < ActionController::Base
 
   def authenticate_user!
     if user_signed_in?
-      p "WHYYY"
       super
     else
       redirect_to :root, :notice => 'if you want to add a notice'

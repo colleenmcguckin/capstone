@@ -25,35 +25,40 @@
 </div>
 <div ng-controller="structureCtrl" ng-init="setId(<%= @song_id %>)">
 <div id="structure_container">
-  <div class="element_div" ng-repeat="inputField in inputFields">
-    <div class="structure_div" >
+<div class="row">
+  <div class="element_div col-lg-12" ng-repeat="inputField in inputFields">
+    <div class="structure_div">
       <div class="structure_div">
         <h3 ng-click="removeElementField(inputField)">-</h3>
       </div>
-      <div class="ElementSelection">
-        <div>
-          <h4>Select Element:</h4>
+      <div id="element_container">
+        <div class="ElementSelection">
+          <div>
+            <h4>Select Element:</h4>
+          </div>
+          <div>
+            <select ng-model="inputField.elementSelected" ng-options="element.element_name for element in element_names"></select>
+          </div>
         </div>
+        <div class="ElementSelection">
         <div>
-          <select ng-model="inputField.elementSelected" ng-options="element.element_name for element in element_names"></select>
+            <h4>Select Length (in measures):</h4>
         </div>
+        <select ng-model="inputField.lengthSelected">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="4">4</option>
+          <option value="8">8</option>></select>
+        </div>
+      
       </div>
-      <div class="ElementSelection">
-      <div>
-          <h4>Select Length (in measures):</h4>
+      <div class="structure_div" >
+        <h3 ng-click="addElementField()">+</h3>   
       </div>
-      <select ng-model="inputField.lengthSelected">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="4">4</option>
-        <option value="8">8</option>></select>
-      </div>
-      <input ng-model="inputField.optionalNotes" placeholder="Optional Notes">
-    <div class="structure_div">
-      <h3 ng-click="addElementField()">+</h3>
-    </div>
     </div>  
   </div>
+  </div>
+
   <div>
     <button id="structureButton" ng-click="saveStructure()"> Save Structure! </button>
   </div>

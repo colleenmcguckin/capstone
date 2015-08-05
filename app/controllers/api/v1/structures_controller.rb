@@ -1,4 +1,5 @@
 class Api::V1::StructuresController < ApplicationController
+  skip_before_filter :verify_authenticity_token
 
   def create
     # element_1 = params[:element_1][:element_library_id]

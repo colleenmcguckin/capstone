@@ -47,6 +47,7 @@ def initialize(id)
             previous_chord = object.chord.name
             end
           end
+            string += " | "
         end
 
         text string, :align => :justify

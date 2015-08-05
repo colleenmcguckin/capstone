@@ -50,7 +50,7 @@ class StructuresController < ApplicationController
 
 
 
-    redirect_to "/songs/#{params[:id]}/show_pdf.pdf"
+    redirect_to "/songs/#{params[:id]}"
   end
 
   def show
