@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.1'
+gem 'rails', '4.2.9'
 # Use mysql as the database for Active Record
 gem 'mysql2'
 # Use SCSS for stylesheets
@@ -33,7 +33,7 @@ gem 'prawn', '~> 2.0.1'
 # gem 'capistrano-rails', group: :development
 gem 'seed_dump'
 
-gem 'pg', group: :production
+# gem 'pg', group: :production
 
 gem 'rails_12factor', group: :production
 

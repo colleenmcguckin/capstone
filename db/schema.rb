@@ -24,8 +24,8 @@ ActiveRecord::Schema.define(version: 20150729233752) do
     t.string   "root",       limit: 255
     t.string   "quality",    limit: 255
     t.string   "audio_file", limit: 255
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.string   "name",       limit: 255
   end
 
@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 20150729233752) do
     t.string   "integer",           limit: 255
     t.integer  "key_id",            limit: 4
     t.integer  "tempo_id",          limit: 4
-    t.boolean  "access",            limit: 1
+    t.boolean  "access"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id",           limit: 4
