@@ -3,4 +3,4 @@
 == Installation
 
 $ brew install mysql
-$ ruby-install ruby 2.2.2
+$ ruby-install ruby 2.3.4
