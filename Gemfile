@@ -36,6 +36,9 @@ gem 'seed_dump'
 gem 'pg', '0.20.0'
 gem 'puma'
 
+gem 'pry-rails'
+gem 'pry'
+
 gem 'rails_12factor', group: :production
 
 
