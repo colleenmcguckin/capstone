@@ -34,6 +34,7 @@ gem 'prawn', '~> 2.0.1'
 gem 'seed_dump'
 
 gem 'pg', '0.20.0'
+gem 'puma'
 
 gem 'rails_12factor', group: :production
 

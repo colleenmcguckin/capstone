@@ -95,6 +95,7 @@ GEM
     prawn (2.0.2)
       pdf-core (~> 0.6.0)
       ttfunk (~> 1.4.0)
+    puma (3.10.0)
     rack (1.6.8)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -191,6 +192,7 @@ DEPENDENCIES
   jquery-rails
   pg (= 0.20.0)
   prawn (~> 2.0.1)
+  puma
   rails (= 4.2.9)
   rails_12factor
   sass-rails (~> 5.0)
