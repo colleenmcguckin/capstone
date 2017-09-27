@@ -13,102 +13,105 @@
 
 ActiveRecord::Schema.define(version: 20150729233752) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "chord_by_keys", force: :cascade do |t|
-    t.integer  "key_id",     limit: 4
-    t.integer  "chord_id",   limit: 4
+    t.integer  "key_id"
+    t.integer  "chord_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "chords", force: :cascade do |t|
-    t.string   "root",       limit: 255
-    t.string   "quality",    limit: 255
-    t.string   "audio_file", limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.string   "name",       limit: 255
+    t.string   "root"
+    t.string   "quality"
+    t.string   "audio_file"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "name"
   end
 
   create_table "element_libraries", force: :cascade do |t|
-    t.string   "name",       limit: 255
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "elements", force: :cascade do |t|
-    t.integer  "song_id",            limit: 4
-    t.integer  "element_library_id", limit: 4
-    t.integer  "length",             limit: 4
-    t.text     "note",               limit: 65535
+    t.integer  "song_id"
+    t.integer  "element_library_id"
+    t.integer  "length"
+    t.text     "note"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "keys", force: :cascade do |t|
-    t.string   "tonic",      limit: 255
-    t.string   "quality",    limit: 255
+    t.string   "tonic"
+    t.string   "quality"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "lyrics", force: :cascade do |t|
-    t.integer  "element_id",  limit: 4
-    t.integer  "line_number", limit: 4
-    t.text     "lyric",       limit: 65535
-    t.integer  "song_id",     limit: 4
+    t.integer  "element_id"
+    t.integer  "line_number"
+    t.text     "lyric"
+    t.integer  "song_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "songs", force: :cascade do |t|
-    t.text     "name",              limit: 65535
-    t.string   "time_signature_id", limit: 255
-    t.string   "integer",           limit: 255
-    t.integer  "key_id",            limit: 4
-    t.integer  "tempo_id",          limit: 4
+    t.text     "name"
+    t.string   "time_signature_id"
+    t.string   "integer"
+    t.integer  "key_id"
+    t.integer  "tempo_id"
     t.boolean  "access"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id",           limit: 4
+    t.integer  "user_id"
   end
 
   create_table "structures", force: :cascade do |t|
-    t.integer  "chord_id",           limit: 4
-    t.integer  "position",           limit: 4
-    t.integer  "song_id",            limit: 4
-    t.integer  "element_library_id", limit: 4
+    t.integer  "chord_id"
+    t.integer  "position"
+    t.integer  "song_id"
+    t.integer  "element_library_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "notes",              limit: 65535
+    t.text     "notes"
   end
 
   create_table "tempos", force: :cascade do |t|
-    t.integer  "bpm",         limit: 4
+    t.integer  "bpm"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "tempo_name",  limit: 255
-    t.string   "description", limit: 255
+    t.string   "tempo_name"
+    t.string   "description"
   end
 
   create_table "time_signatures", force: :cascade do |t|
-    t.integer  "beat_unit",  limit: 4
-    t.integer  "bar",        limit: 4
+    t.integer  "beat_unit"
+    t.integer  "bar"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "name",       limit: 255
+    t.string   "name"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  limit: 255, default: "", null: false
-    t.string   "encrypted_password",     limit: 255, default: "", null: false
-    t.string   "reset_password_token",   limit: 255
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          limit: 4,   default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip",     limit: 255
-    t.string   "last_sign_in_ip",        limit: 255
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
